@@ -1,4 +1,5 @@
 #chess
+from Pieces import Pawn
 
 board = [
     ["br","bn","bb","bq","bk","bb","bn","br"],
@@ -73,6 +74,9 @@ def make_move(board, column_from, row_from, column_to, row_to):
     if can_move(figure, piece, column_from, row_from, column_to, row_to, board): # Возвращает можно ли сделать ход
         board[row_to][column_to] = figure # Клетку куда мы должны сходить заменяем фигурой
         board[row_from][column_from] = " " # Клетку который мы ходили оставляем пустой
+
+wp1 = Pawn("White", (4,6))
+print(wp1.can_move((4,5), board))
 
 while True:
     print(" ")
